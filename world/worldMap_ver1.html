@@ -4481,15 +4481,12 @@
   <script src="js/active.js"></script>
 
   <script>
-    var safePlace = new Array();
-    var dangerPlace = new Array();
-    var cautionPlace = new Array();
 
-    safePlace[0] = "UA";
-    safePlace[1] = "AE";
-    dangerPlace[0] = "KR";
-    dangerPlace[1] = "BS";
-    cautionPlace[0] = "BT";
+
+
+    var safePlace = new Array("MK","TR");
+    var dangerPlace = new Array("AF","AU","BN","BT","FJ","ID","IL","IN","KG","KP","KZ","LA","LK","MD","MM","MN","NP","NZ","PH","PK","QA","SA","TH","TJ","TL","TM","TW","UZ","VN","YE");
+    var cautionPlace = new Array("AE","AL","AM","AT","AZ","BA","BD","BE","BG","BY","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GE","GL","GR","HR","HU","IE","IQ","IR","IS","IT","JO","JP","KH","KW","LB","LT","LU","LV","ME","MY","NL","NO","OM","PL","PT","RO","RS","RU","SE","SI","SK","SY","UA");
 
     for(var i = 0; i < safePlace.length; i++){
       var x = document.getElementById(safePlace[i]);

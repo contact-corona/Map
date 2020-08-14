@@ -1,0 +1,1 @@
+"AE","AL","AM","AT","AZ","BA","BD","BE","BG","BY","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GE","GL","GR","HR","HU","IE","IQ","IR","IS","IT","JO","JP","KH","KW","LB","LT","LU","LV","ME","MY","NL","NO","OM","PL","PT","RO","RS","RU","SE","SI","SK","SY","UA"
