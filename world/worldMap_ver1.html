@@ -4488,6 +4488,8 @@
     var dangerPlace = new Array("AF","AO","AR","AU","BI","BN","BO","BT","BW","BZ","CA","CG","CL","CM","CO","DO","DZ","ER","FJ","GH","GM","GT","GW","GY","HN","ID","IL","IN","KG","KP","KZ","LA","LK","LS","LY","MA","MD","MG","MM","MN","MR","MW","MZ","NA","NE","NI","NP","NZ","PA","PE","PH","PK","PY","QA","SA","SB","SD","SN","SO","SR","SS","SV","SZ","TH","TJ","TL","TM","TT","TW","UG","UY","UZ","VE","VN","VU","YE","ZA","ZW");
     var cautionPlace = new Array("AE","AL","AM","AT","AZ","BA","BD","BE","BF","BG","BJ","BR","BS","BY","CD","CH","CR","CY","CZ","DE","DK","EC","EE","ES","ET","FI","FR","GA","GB","GE","GL","GN","GQ","GR","HR","HU","IE","IQ","IR","IS","IT","JM","JO","JP","KE","KH","KW","LB","LR","LT","LU","LV","ME","ML","MY","NG","NL","NO","OM","PG","PL","PT","RO","RS","RU","RW","SE","SI","SK","SL","SY","TD","TG","TN","TZ","UA","US","ZM");
 
+
+
     for(var i = 0; i < safePlace.length; i++){
       var x = document.getElementById(safePlace[i]);
       x.style.fill = "#99FF99"; // green
@@ -4496,6 +4498,7 @@
     for(var i = 0; i < dangerPlace.length; i++){
       var x = document.getElementById(dangerPlace[i]);
       x.style.fill = "#FF0033"; // red
+      x.addEventListener("click", openWindow);
     }
 
     for(var i = 0; i < cautionPlace.length; i++){
@@ -4503,6 +4506,11 @@
       x.style.fill = "#FFFF99"; //yellow
     }
 
+    function openWindow(event){
+      var tempX = event.screenX;
+      var tempY = event.screenY;
+      window.open("http://www.naver.com", "_self", "width=800, height=700");
+    }
 
 
   </script>
