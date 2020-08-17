@@ -144,7 +144,7 @@
                 <form action="#">
                   <input type="text" id="search" placeholder="Search something...">
                   <div id="close-icon"></div>
-                  <input class="d-none" type="submit" value="" onclick="stag()" >
+                  <input class="d-none" type="submit" value="" >
                 </form>
               </div>
             </div>
@@ -913,24 +913,6 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
 
       })
     }
-
-    function stag (){
-      var temp = document.getElementById("search").value;
-
-      swal({
-        title : temp,
-  			text : '설명',
-        imageUrl: 'https://lipis.github.io/flag-icon-css/flags/4x3/' + temp.toLowerCase() + '.svg',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Custom image',
-
-      })
-    }
-
   </script>
-
-
 </body>
-
 </html>
