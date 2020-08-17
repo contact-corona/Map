@@ -799,6 +799,9 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
         data-trigger="hover" data-html="true" data-toggle="popover" data-content="some content <br> inside the popover" data-placement="right"/>
     </g>
   </svg>
+
+
+
   <!-- ***** Footer Area Start ***** -->
   <footer class="footer-area">
     <div class="container">
@@ -903,16 +906,18 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
     }
 
     function openWindow (){
+      var link = '"https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=%EC%BD%94%EB%A1%9C%EB%82%9819+' + this.id.toLowerCase() + '"';
       swal({
+        html:true,
         title : this.id,
-  			text : '설명',
+  			text : '<a href=' + link + ' font="bold">여기</a>를 눌러 코로나 최신 링크로 이동',
         imageUrl: 'https://lipis.github.io/flag-icon-css/flags/4x3/' + this.id.toLowerCase() + '.svg',
         imageWidth: 400,
         imageHeight: 200,
-        imageAlt: 'Custom image',
-
+        imageAlt: 'Custom image'
       })
     }
+
   </script>
 </body>
 </html>
