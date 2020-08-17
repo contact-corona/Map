@@ -3,24 +3,18 @@
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="import" href="./github/world/worldMap_ver1.html">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="container">
-  <h3>Popover Example</h3>
-  <a href="#" data-toggle="popover" title="Popover Header" data-html="true" data-content="Some content inside the <br> popover">Toggle popover</a>
-</div>
-
+  <table id="tbl" border="1px solid">
+  <tr><td><img src="https://lipis.github.io/flag-icon-css/flags/4x3/jp.svg" width=50 alt="img"></td><td>1</td></tr>
+  </table>
 <script>
-$(document).ready(function(){
-  $('[data-toggle="popover"]').popover();
-});
+  var cautionPlace = new Array("AE","AL","AM","AT","AZ","BA","BD","BE","BF","BG","BJ","BR","BS","BY","CD","CH","CR","CY","CZ","DE","DK","EC","EE","ES","ET","FI","FR","GA","GB","GE","GL","GN","GQ","GR","HR","HU","IE","IQ","IR","IS","IT","JM","JO","JP","KE","KH","KW","LB","LR","LT","LU","LV","ME","ML","MY","NG","NL","NO","OM","PG","PL","PT","RO","RS","RU","RW","SE","SI","SK","SL","SY","TD","TG","TN","TZ","UA","US","ZM","CN");
+
+  var tbl = document.getElementById("tbl");
+  for(var i = 0; i < cautionPlace.length; i++)
+    tbl.rows[i].cells[0].innerHTML = '<img src="https://lipis.github.io/flag-icon-css/flags/4x3/jp.svg" width=50 alt="img"';
+
 </script>
 
 </body>
