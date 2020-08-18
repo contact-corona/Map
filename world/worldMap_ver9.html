@@ -891,7 +891,9 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
     kor.setAttribute("data-content", "Be at home");
 
     var safePlace = new Array("CU","DJ","EG","HT","MK","MX","TR");
+    var safehan = new Array("이집트")
     var dangerPlace = new Array("AF","AO","AR","AU","BI","BN","BO","BT","BW","BZ","CA","CG","CL","CM","CO","DO","DZ","ER","FJ","GH","GM","GT","GW","GY","HN","ID","IL","IN","KG","KP","KZ","LA","LK","LS","LY","MA","MD","MG","MM","MN","MR","MW","MZ","NA","NE","NI","NP","NZ","PA","PE","PH","PK","PY","QA","SA","SB","SD","SN","SO","SR","SS","SV","SZ","TH","TJ","TL","TM","TT","TW","UG","UY","UZ","VE","VN","VU","YE","ZA","ZW");
+    var 다른이름 =
     var cautionPlace = new Array("AE","AL","AM","AT","AZ","BA","BD","BE","BF","BG","BJ","BR","BS","BY","CD","CH","CR","CY","CZ","DE","DK","EC","EE","ES","ET","FI","FR","GA","GB","GE","GL","GN","GQ","GR","HR","HU","IE","IQ","IR","IS","IT","JM","JO","JP","KE","KH","KW","LB","LR","LT","LU","LV","ME","ML","MY","NG","NL","NO","OM","PG","PL","PT","RO","RS","RU","RW","SE","SI","SK","SL","SY","TD","TG","TN","TZ","UA","US","ZM","CN");
 
     for(var i = 0; i < safePlace.length; i++){
@@ -911,10 +913,14 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
 
     for(var i = 0; i < dangerPlace.length; i++){
       var node = document.createElement("A");
-      var textnode = document.createTextNode(dangerPlace[i]);
-      node.appendChild(textnode);
       document.getElementById("nonono").appendChild(node);
       node.setAttribute("class", "dropdown-item");
+      // var textnode = document.createTextNode(dangerPlace[i]);
+      node.innerHTML = dangerPlace[i] +"<img src=" + "https://lipis.github.io/flag-icon-css/flags/4x3/"+dangerPlace[i].toLowerCase() + ".svg " + "style=\"width:2px;\">"
+      // node.innerHTML = dangerPlace[i] +"<img src=" + "https://lipis.github.io/flag-icon-css/flags/4x3/"+dangerPlace[i].toLowerCase() + ".svg>"
+
+      // document.getElementById("nonono").appendChild(node);
+      // node.setAttribute("class", "dropdown-item");
     }
 
     for(var i = 0; i < cautionPlace.length; i++){
