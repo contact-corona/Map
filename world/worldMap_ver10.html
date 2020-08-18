@@ -1011,6 +1011,10 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
     ,'<br>"▸모든 홍콩 비거주자의 홍콩 입국 금지(4.6.)<br>※ 6.1.부터 홍콩 국제공항을 통한 경유는 가능<br>- 출입국 절차 없는 24시간 내 환승에 한함, 홍콩을 경유한 중국 출입국 및 자가환승은 불가<br>- 도착 시 발열 검사 후 환승편 게이트로 바로 이동,  승객 간 1.5m 거리 유지<br>※  중국,  마카오,  대만에서  입국하는  경우  지난  14일  내  해외방문  사실이  없을시 홍콩 비거주자라도 입국 가능,  입국 후 14일간 자가/호텔 격리(4.6.)<br>※  △공적  업무  중인  공무원(영사단  포함),  △홍콩정부의  허가를  받은  전염병  대 응 업무 관련자,  △홍콩거주자의 배우자 및 미성년 자녀 예외<br>※ 해외에서 입국하는 홍콩 거주자 자가격리(전자손목밴드 14일간 의무착용)(3.19.)<br>- 자가격리자 매일 위치 보고 및 체온 측정 기록/이동 및 출국 불가(위반 시 법적 처벌)<br>/ 최근 14일 이내 대구·경북을 방문, 입국하는 홍콩 거주자 14일간 자가격리(4.17.)<br>※ 해외입경자 전원에 대한 코로나 19  검사를 실시<br>-  4.22.부터  검사  결과가  양성일  경우  지정병원  이송,  음성일  경우  14일간  자가<br>격리 후 12일째 되는 날 코로나 19  재검사(4.21.)"');
 
 
+    var safe = new Array("쿠바","지부티","이집트","아이티","북마케도니아","멕시코","터키");
+    var danger = new Array("아프가니스탄","앙골라","아르헨티나","오스트레일리아","부룬디","브루나이","볼리비아","부탄","보츠와나","벨리즈","캐나다","콩고 공화국","칠레","카메룬","콜롬비아","도미니카 공화국","알제리","에리트레아","피지","가나","감비아","과테말라","기니비사우","가이아나","온두라스","인도네시아","이스라엘","인도","키르기스스탄","조선민주주의인민공화국","카자흐스탄","라오스","스리랑카","레소토","리비아","모로코","몰도바","마다가스카르","미얀마","몽골","모리타니","말라위","모잠비크","나미비아","니제르","니카라과","네팔","뉴질랜드","파나마","페루","필리핀","파키스탄","파라과이","카타르","사우디아라비아","솔로몬 제도","수단","세네갈","소말리아","수리남","남수단","엘살바도르","에스와티니","태국","타지키스탄","동티모르","투르크메니스탄","트리니다드 토바고","중화민국","우간다","우루과이","우즈베키스탄","베네수엘라","베트남","바누아투","예멘","남아프리카 공화국","짐바브웨");
+    var caution = new Array("아랍에미리트","알바니아","아르메니아","오스트리아","아제르바이잔","보스니아 헤르체고비나","방글라데시","벨기에","부르키나파소","불가리아","베냉","브라질","바하마","벨라루스","콩고 민주 공화국","스위스","코스타리카","키프로스","체코","독일","덴마크","에콰도르","에스토니아","스페인","에티오피아","핀란드","프랑스","가봉","영국","조지아","그린란드","기니","적도 기니","그리스","크로아티아","헝가리","아일랜드","이라크","이란","아이슬란드","이탈리아","자메이카","요르단","일본","케냐","캄보디아","쿠웨이트","레바논","라이베리아","리투아니아","룩셈부르크","라트비아","몬테네그로","말리","말레이시아","나이지리아","네덜란드","노르웨이","오만","파푸아뉴기니","폴란드","포르투갈","루마니아","세르비아","러시아","르완다","스웨덴","슬로베니아","슬로바키아","시에라리온","시리아","차드","토고","튀니지","탄자니아","우크라이나","미국","잠비아","중국");
+
 
     for(var i = 0; i < safePlace.length; i++){
       var x = document.getElementById(safePlace[i]);
@@ -1018,23 +1022,26 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       x.addEventListener("click", openWindow);
       x.setAttribute("data-content", "Safe to go!");
       var node = document.createElement("A");
-      var textnode = document.createTextNode(safePlace[i]);
+      var textnode = document.createTextNode(safe[i]);
+      node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
       node.appendChild(textnode);
       document.getElementById("somewhatsafe").appendChild(node);
-      node.setAttribute("class", "dropdown-item");
+      //node.setAttribute("class", "dropdown-item");
+      node.classList.add("icon-flag", "dropdown-item");
     }
 
     for(var i = 0; i < dangerPlace.length; i++){
       var x = document.getElementById(dangerPlace[i]);
-
       x.style.fill = "#FF0033"; // red
       x.addEventListener("click", openWindow);
       x.setAttribute("data-content", "No Entry");
       var node = document.createElement("A");
-      var textnode = document.createTextNode(dangerPlace[i]);
+      var textnode = document.createTextNode(danger[i]);
+      node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
       node.appendChild(textnode);
       document.getElementById("nonono").appendChild(node);
-      node.setAttribute("class", "dropdown-item");
+      //node.setAttribute("class", "dropdown-item");
+      node.classList.add("icon-flag", "dropdown-item");
     }
 
     for(var i = 0; i < cautionPlace.length; i++){
@@ -1043,7 +1050,7 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       x.addEventListener("click", openWindow);
       x.setAttribute("data-content", "Visit with quarntine period");
       var node = document.createElement("A");
-      var textnode = document.createTextNode(cautionPlace[i]);
+      var textnode = document.createTextNode(caution[i]);
       node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
       node.appendChild(textnode);
       document.getElementById("period").appendChild(node);
