@@ -164,12 +164,12 @@
                 </li>
               </ul>
               <!-- Search Form  -->
-              <div id="search-wrapper">
+              <!-- <div id="search-wrapper">
                 <form action="#">
                   <input type="text" id="search" placeholder="Search something...">
                   <div id="close-icon"></div>
                   <input class="d-none" type="submit" value="">
-                </form>
+                </form> -->
               </div>
             </div>
           </nav>
@@ -835,7 +835,7 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
     var kor = document.getElementById("KR");
     kor.style.fill = "22741C";
     kor.addEventListener("click", openWindow);
-    kor.setAttribute("data-content", "Be at home");
+    kor.setAttribute("data-content", "여기서 출발~~^^");
 
     var safePlace = new Array("CU","DJ","EG","HT","MK","MX","TR");
     var dangerPlace = new Array("AF","AO","AR","AU","BI","BN","BO","BT","BW","BZ","CA","CG","CL","CM","CO","DO","DZ","ER","FJ","GH","GM","GT","GW","GY","HN","ID","IL","IN","KG","KP","KZ","LA","LK","LS","LY","MA","MD","MG","MM","MN","MR","MW","MZ","NA","NE","NI","NP","NZ","PA","PE","PH","PK","PY","QA","SA","SB","SD","SN","SO","SR","SS","SV","SZ","TH","TJ","TL","TM","TT","TW","UG","UY","UZ","VE","VN","VU","YE","ZA","ZW");
@@ -1020,7 +1020,7 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       var x = document.getElementById(safePlace[i]);
       x.style.fill = "#99FF99"; // green
       x.addEventListener("click", openWindow);
-      x.setAttribute("data-content", "Safe to go!");
+      x.setAttribute("data-content", "입국가능");
       var node = document.createElement("A");
       var textnode = document.createTextNode(safe[i]);
       node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
@@ -1034,7 +1034,7 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       var x = document.getElementById(dangerPlace[i]);
       x.style.fill = "#FF0033"; // red
       x.addEventListener("click", openWindow);
-      x.setAttribute("data-content", "No Entry");
+      x.setAttribute("data-content", "입국불가");
       var node = document.createElement("A");
       var textnode = document.createTextNode(danger[i]);
       node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
@@ -1048,7 +1048,7 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       var x = document.getElementById(cautionPlace[i]);
       x.style.fill = "#FFE08C"; //yellow
       x.addEventListener("click", openWindow);
-      x.setAttribute("data-content", "Visit with quarntine period");
+      x.setAttribute("data-content", "격리필요");
       var node = document.createElement("A");
       var textnode = document.createTextNode(caution[i]);
       node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
