@@ -88,6 +88,12 @@
       stroke-width: 1.5;
     }
 
+    .icon-flag {
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px auto;
+    }
+
 
   /* #KR{
     fill: red;
@@ -867,9 +873,11 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       x.setAttribute("data-content", "Visit with quarntine period");
       var node = document.createElement("A");
       var textnode = document.createTextNode(cautionPlace[i]);
+      node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
       node.appendChild(textnode);
       document.getElementById("period").appendChild(node);
-      node.setAttribute("class", "dropdown-item");
+      // node.setAttribute("class", "dropdown-item");
+      node.classList.add("icon-flag", "dropdown-item");
     }
 
     function openWindow (){
