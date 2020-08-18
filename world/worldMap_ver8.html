@@ -88,12 +88,6 @@
       stroke-width: 1.5;
     }
 
-    .icon-flag {
-      background-repeat: no-repeat;
-      background-position: right 10px center;
-      background-size: 20px auto;
-    }
-
 
   /* #KR{
     fill: red;
@@ -838,8 +832,11 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
     kor.setAttribute("data-content", "Be at home");
 
     var safePlace = new Array("CU","DJ","EG","HT","MK","MX","TR");
+    var safe = new Array("쿠바","지부티","이집트","아이티","북마케도니아","멕시코","터키");
     var dangerPlace = new Array("AF","AO","AR","AU","BI","BN","BO","BT","BW","BZ","CA","CG","CL","CM","CO","DO","DZ","ER","FJ","GH","GM","GT","GW","GY","HN","ID","IL","IN","KG","KP","KZ","LA","LK","LS","LY","MA","MD","MG","MM","MN","MR","MW","MZ","NA","NE","NI","NP","NZ","PA","PE","PH","PK","PY","QA","SA","SB","SD","SN","SO","SR","SS","SV","SZ","TH","TJ","TL","TM","TT","TW","UG","UY","UZ","VE","VN","VU","YE","ZA","ZW");
+    var danger = new Array("아프가니스탄","앙골라","아르헨티나","오스트레일리아","부룬디","브루나이","볼리비아","부탄","보츠와나","벨리즈","캐나다","콩고 공화국","칠레","카메룬","콜롬비아","도미니카 공화국","알제리","에리트레아","피지","가나","감비아","과테말라","기니비사우","가이아나","온두라스","인도네시아","이스라엘","인도","키르기스스탄","조선민주주의인민공화국","카자흐스탄","라오스","스리랑카","레소토","리비아","모로코","몰도바","마다가스카르","미얀마","몽골","모리타니","말라위","모잠비크","나미비아","니제르","니카라과","네팔","뉴질랜드","파나마","페루","필리핀","파키스탄","파라과이","카타르","사우디아라비아","솔로몬 제도","수단","세네갈","소말리아","수리남","남수단","엘살바도르","에스와티니","태국","타지키스탄","동티모르","투르크메니스탄","트리니다드 토바고","중화민국","우간다","우루과이","우즈베키스탄","베네수엘라","베트남","바누아투","예멘","남아프리카 공화국","짐바브웨");
     var cautionPlace = new Array("AE","AL","AM","AT","AZ","BA","BD","BE","BF","BG","BJ","BR","BS","BY","CD","CH","CR","CY","CZ","DE","DK","EC","EE","ES","ET","FI","FR","GA","GB","GE","GL","GN","GQ","GR","HR","HU","IE","IQ","IR","IS","IT","JM","JO","JP","KE","KH","KW","LB","LR","LT","LU","LV","ME","ML","MY","NG","NL","NO","OM","PG","PL","PT","RO","RS","RU","RW","SE","SI","SK","SL","SY","TD","TG","TN","TZ","UA","US","ZM","CN");
+    var coution = new Array("아랍에미리트","알바니아","아르메니아","오스트리아","아제르바이잔","보스니아 헤르체고비나","방글라데시","벨기에","부르키나파소","불가리아","베냉","브라질","바하마","벨라루스","콩고 민주 공화국","스위스","코스타리카","키프로스","체코","독일","덴마크","에콰도르","에스토니아","스페인","에티오피아","핀란드","프랑스","가봉","영국","조지아","그린란드","기니","적도 기니","그리스","크로아티아","헝가리","아일랜드","이라크","이란","아이슬란드","이탈리아","자메이카","요르단","일본","케냐","캄보디아","쿠웨이트","레바논","라이베리아","리투아니아","룩셈부르크","라트비아","몬테네그로","말리","말레이시아","나이지리아","네덜란드","노르웨이","오만","파푸아뉴기니","폴란드","포르투갈","루마니아","세르비아","러시아","르완다","스웨덴","슬로베니아","슬로바키아","시에라리온","시리아","차드","토고","튀니지","탄자니아","우크라이나","미국","잠비아","중국");
 
     for(var i = 0; i < safePlace.length; i++){
       var x = document.getElementById(safePlace[i]);
@@ -873,11 +870,9 @@ data-trigger="hover" data-html="true" data-toggle="popover" data-content="some c
       x.setAttribute("data-content", "Visit with quarntine period");
       var node = document.createElement("A");
       var textnode = document.createTextNode(cautionPlace[i]);
-      node.style.backgroundImage = 'url(https://lipis.github.io/flag-icon-css/flags/4x3/' + x.id.toLowerCase() + '.svg)';
       node.appendChild(textnode);
       document.getElementById("period").appendChild(node);
-      // node.setAttribute("class", "dropdown-item");
-      node.classList.add("icon-flag", "dropdown-item");
+      node.setAttribute("class", "dropdown-item");
     }
 
     function openWindow (){
